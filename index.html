@@ -15,7 +15,7 @@
 	<!-- <script src="http://res.wx.qq.com/open/js/jweixin-1.6.0.js"></script> -->
 	<script src="https://res2.wx.qq.com/open/js/jweixin-1.6.0.js"></script>
 	<script>
-		alert(location.href.split('#')[0]);
+		// alert(location.href.split('#')[0]);
 		
 		let accessToken = "59_4HnDteN7dN4rJaY1890LKX_ln6QeWtVj6JMW5Py3egItwnBc-lskL1RSVRgp51QrJ_gOhlHo4d1R6QstaVL-XORCK2pG-6y1ky-DDrMMynzV-pFikkyc4A6kYCmZlAF_aH7qfGmqx9BH3t_1IFWhAGAVSJ";
 		let appid = "wx528e823ad184793a";
@@ -52,6 +52,9 @@
 						alert('取消分享');
 					}
 				  })
+			});
+			wx.error(function(res){
+				console.info(res)
 			});
 		}
 	</script>
