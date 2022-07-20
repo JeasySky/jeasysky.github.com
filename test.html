@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>微信h5页面</title>
+	<link rel="stylesheet" href="https://res.wx.qq.com/t/wx_fed/weui-source/res/2.5.9/weui.css">
+</head>
+<body>
+	
+	<div class="page">
+	    <div class="page__hd">
+	        <h1 class="page__title">Button</h1>
+	        <p class="page__desc">按钮</p>
+	    </div>
+	    <div class="page__bd">
+	        <a href="#button_default" role="button" class="weui-btn weui-btn_default">普通型</a>
+	        <a href="#button_bottom_fixed" role="button" class="weui-btn weui-btn_default">底部悬浮型</a>
+	    </div>
+	</div>
+	
+	<script src="http://res.wx.qq.com/open/js/jweixin-1.6.0.js"></script>
+	<script>
+		let accessToken = "59_k94_A44CzYIitUNOA4znKIFEkP-ecN7yKxPJpF3VrIsQKBDiGUwwmpqxCV3AcY8w509xLNgZUfDNDDuwGon8bgeT7Q5QIdT9t3l7EkiZkZg4oer15Op6xFjWq8aUqSggugDcjtJ2BQCKTnxiLVRfAJAPZV";
+		let appid = "wx6efed80578e447c4";
+		let secret = "7b8ca8fae7519d39da9ff9b9d0bce169";
+		
+		wx.config({
+		  debug: true, // 开启调试模式,调用的所有 api 的返回值会在客户端 alert 出来，若要查看传入的参数，可以在 pc 端打开，参数信息会通过 log 打出，仅在 pc 端时才会打印。
+		  appId: 'wx6efed80578e447c4', // 必填，公众号的唯一标识
+		  timestamp: 1234567890, // 必填，生成签名的时间戳
+		  nonceStr: 'testqian', // 必填，生成签名的随机串
+		  signature: '9f8685cf0203543e4e875b7cf4ba409353e0f069',// 必填，签名
+		  jsApiList: [] // 必填，需要使用的 JS 接口列表
+		});
+		
+		
+		function(){
+			wx.ready(function(){
+				// config信息验证后会执行 ready 方法，所有接口调用都必须在 config 接口获得结果之后，
+				// config是一个客户端的异步操作，所以如果需要在页面加载时就调用相关接口，
+				// 则须把相关接口放在 ready 函数中调用来确保正确执行。
+				// 对于用户触发时才调用的接口，则可以直接调用，不需要放在 ready 函数中。
+				wx.updateAppMessageShareData({ 
+				    title: '自定义标题', // 分享标题
+				    desc: '这个是自定义的标题描述', // 分享描述
+				    link: 'https://jeasysky.github.io/test.html', // 分享链接，该链接域名或路径必须与当前页面对应的公众号 JS 安全域名一致
+				    imgUrl: '', // 分享图标
+				    success: function () {
+				      // 用户确认分享后
+					  alert('成功分享');
+				    },
+					cancel: function(){
+						// 用户取消分享后
+						alert('取消分享');
+					}
+				  })
+			});
+		}
+	</script>
+</body>
+</html>
