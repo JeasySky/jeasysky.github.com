@@ -15,16 +15,19 @@
 	<!-- <script src="http://res.wx.qq.com/open/js/jweixin-1.6.0.js"></script> -->
 	<script src="https://res2.wx.qq.com/open/js/jweixin-1.6.0.js"></script>
 	<script>
+		alert(location.href.split('#')[0]);
+		
 		let accessToken = "59_4HnDteN7dN4rJaY1890LKX_ln6QeWtVj6JMW5Py3egItwnBc-lskL1RSVRgp51QrJ_gOhlHo4d1R6QstaVL-XORCK2pG-6y1ky-DDrMMynzV-pFikkyc4A6kYCmZlAF_aH7qfGmqx9BH3t_1IFWhAGAVSJ";
 		let appid = "wx528e823ad184793a";
 		let secret = "adae28f946403dd1aaa467c49830171c";
+		let testShow = 0;
 		
 		wx.config({
 		  debug: true, // 开启调试模式,调用的所有 api 的返回值会在客户端 alert 出来，若要查看传入的参数，可以在 pc 端打开，参数信息会通过 log 打出，仅在 pc 端时才会打印。
 		  appId: appid, // 必填，公众号的唯一标识
 		  timestamp: 1234567890, // 必填，生成签名的时间戳
 		  nonceStr: 'testqian', // 必填，生成签名的随机串
-		  signature: '4a887011263613caafb5ecb1a2e233e4a7ace1ce',// 必填，签名
+		  signature: '292c37593b59e5a4939f89f51636b8ad554d171e',// 必填，签名
 		  jsApiList: [] // 必填，需要使用的 JS 接口列表
 		});
 		
